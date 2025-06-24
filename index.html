@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;700&display=swap"
         rel="stylesheet">
-    <title>projeto</title>
+    <title>bookline</title>
 </head>
 
 <body>
@@ -150,6 +150,46 @@
             </div>
         </div>
     </section>
+<script>
+        // JavaScript para o menu hambúrguer
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const nav = document.querySelector('.bookline');
+            
+            // Função para alternar o menu
+            menuToggle.addEventListener('click', function() {
+                menuToggle.classList.toggle('active');
+                nav.classList.toggle('active');
+                
+                // Prevenir scroll quando menu estiver aberto
+                if (nav.classList.contains('active')) {
+                    document.body.style.overflow = 'hidden';
+                } else {
+                    document.body.style.overflow = 'auto';
+                }
+            });
+            
+            // Fechar menu ao clicar em um link
+            const navLinks = document.querySelectorAll('.bookline a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    menuToggle.classList.remove('active');
+                    nav.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                });
+            });
+            
+            // Fechar menu ao redimensionar tela (para desktop)
+            window.addEventListener('resize', function() {
+                if (window.innerWidth > 460) {
+                    menuToggle.classList.remove('active');
+                    nav.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                }
+            });
+        });
+    </script>
 </body>
+
 
 </html>
