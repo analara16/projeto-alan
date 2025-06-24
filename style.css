@@ -433,8 +433,7 @@ font-weight: lighter;
     #about, #category, #review {
         margin-top: 3rem;
     }
-}
-section[id] {
+    section[id] {
     scroll-margin-top: 100px;
 }
 .menu-toggle {
@@ -444,3 +443,5 @@ section[id] {
     padding: 0.5rem;
     z-index: 1000;
 }
+}
+
