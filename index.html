@@ -18,6 +18,12 @@
             <a href="#" class="logo">
                 <img src="/src/img/Captura de tela 2025-06-19 152239-Photoroom.png" alt="logo">
             </a>
+            <div class="menu-toggle" id="menu-toggle">
+    <span></span>
+    <span></span>
+    <span></span>
+</div>
+
             <nav class="bookline">
                 <a href="#home">home</a>
                 <a href="#about">Sobre</a>
@@ -27,6 +33,8 @@
             <div class="icons">
                 <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/ffffff/search--v1.png"
                     alt="search--v1" />
+
+</div>
             </div>
         </section>
     </header>
@@ -151,44 +159,35 @@
         </div>
     </section>
 <script>
-        // JavaScript para o menu hambúrguer
-        document.addEventListener('DOMContentLoaded', function() {
-            const menuToggle = document.querySelector('.menu-toggle');
-            const nav = document.querySelector('.bookline');
-            
-            // Função para alternar o menu
-            menuToggle.addEventListener('click', function() {
-                menuToggle.classList.toggle('active');
-                nav.classList.toggle('active');
-                
-                // Prevenir scroll quando menu estiver aberto
-                if (nav.classList.contains('active')) {
-                    document.body.style.overflow = 'hidden';
-                } else {
-                    document.body.style.overflow = 'auto';
-                }
-            });
-            
-            // Fechar menu ao clicar em um link
-            const navLinks = document.querySelectorAll('.bookline a');
-            navLinks.forEach(link => {
-                link.addEventListener('click', function() {
-                    menuToggle.classList.remove('active');
-                    nav.classList.remove('active');
-                    document.body.style.overflow = 'auto';
-                });
-            });
-            
-            // Fechar menu ao redimensionar tela (para desktop)
-            window.addEventListener('resize', function() {
-                if (window.innerWidth > 460) {
-                    menuToggle.classList.remove('active');
-                    nav.classList.remove('active');
-                    document.body.style.overflow = 'auto';
-                }
-            });
+    const toggle = document.getElementById("menu-toggle");
+    const nav = document.querySelector(".bookline");
+    const navLinks = document.querySelectorAll(".bookline a");
+
+    toggle.addEventListener("click", () => {
+        nav.classList.toggle("active");
+        toggle.classList.toggle("open");
+    });
+
+    navLinks.forEach(link => {
+        link.addEventListener("click", () => {
+            // Fecha o menu quando clica em um link
+            if (window.innerWidth <= 460) {
+                nav.classList.remove("active");
+                toggle.classList.remove("open");
+            }
+
+            // Garante o scroll manualmente
+            const id = link.getAttribute("href").slice(1); // remove o #
+            const target = document.getElementById(id);
+            if (target) {
+                setTimeout(() => {
+                    target.scrollIntoView({ behavior: "smooth" });
+                }, 100);
+            }
         });
-    </script>
+    });
+</script>
+
 </body>
 
 

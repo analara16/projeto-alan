@@ -79,6 +79,23 @@ section {
     width: 40px;
     height: 40px;
 }
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 0.5rem;
+    z-index: 1000;
+}
+
+.menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 3px 0;
+    transition: 0.3s;
+    transform-origin: center;
+}
+
 
 .btn {
     background: var(--main-color);
@@ -206,12 +223,31 @@ font-weight: lighter;
     margin-top: 1rem;
     text-transform: capitalize;
 }
+.menu-toggle.open span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+.menu-toggle.open span:nth-child(2) {
+    opacity: 0;
+}
+.menu-toggle.open span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+}
+#home,
+#about,
+#category,
+#review {
+    scroll-margin-top: 100px; /* altura do header + um pouco de folga */
+}
+.menu-toggle {
+    display: none;
+}
+
+
 @media (max-width: 460px) {
     :root {
         font-size: 7px;
     }
-    
-    /* Header responsivo */
+ 
     .header {
         height: 70px;
     }
@@ -220,11 +256,6 @@ font-weight: lighter;
         padding: 1rem;
         height: 100%;
         align-items: center;
-    }
-    
-    /* Mostrar menu hambúrguer e ocultar navegação */
-    .menu-toggle {
-        display: flex;
     }
     
     .bookline {
@@ -263,14 +294,12 @@ font-weight: lighter;
     .icons {
         display: none;
     }
-    
-    /* Logo menor */
+   
     .logo img {
         max-width: 120px;
         height: auto;
     }
-    
-    /* Seção home */
+  
     .home-container {
         background-attachment: scroll;
     }
@@ -305,8 +334,7 @@ font-weight: lighter;
         display: inline-block;
         margin-top: 1.5rem;
     }
-    
-    /* Seções gerais */
+ 
     section {
         padding: 2rem 1rem;
     }
@@ -315,8 +343,7 @@ font-weight: lighter;
         font-size: 2.5rem;
         margin-bottom: 2rem;
     }
-    
-    /* Seção About */
+  
     .about .row {
         flex-direction: column;
         gap: 2rem;
@@ -343,14 +370,13 @@ font-weight: lighter;
         margin: 1rem auto;
     }
     
-    /* Grid responsivo */
+    
     .box-container {
         grid-template-columns: 1fr;
         gap: 2rem;
         padding: 0 1rem;
     }
     
-    /* Categoria boxes */
     .category .box-container .box {
         padding: 3rem 2rem;
         margin-bottom: 1rem;
@@ -366,7 +392,6 @@ font-weight: lighter;
         margin-bottom: 1rem;
     }
     
-    /* Review boxes */
     .review .box-container .box {
         padding: 2rem 1.5rem;
         margin-bottom: 1rem;
@@ -400,8 +425,7 @@ font-weight: lighter;
         width: 20px !important;
         height: 20px !important;
     }
-    
-    /* Ajustes de margem para mobile */
+   
     #home {
         padding-top: 7rem;
     }
@@ -409,4 +433,14 @@ font-weight: lighter;
     #about, #category, #review {
         margin-top: 3rem;
     }
+}
+section[id] {
+    scroll-margin-top: 100px;
+}
+.menu-toggle {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 0.5rem;
+    z-index: 1000;
 }
