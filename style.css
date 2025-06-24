@@ -47,13 +47,18 @@ section {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-top: 3.8rem;
-    padding-bottom: 3.8rem;
-    height: 20px;
+    padding: 0 2rem;
+    height: 80px;
 }
-
+.logo img{
+    height: 60px;
+}
+.bookline{
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
 .bookline a {
-    margin: 0 1rem;
     font-size: 1.8rem;
     color: #fff;
 }
