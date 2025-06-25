@@ -110,7 +110,7 @@ section {
     letter-spacing: 0.1rem;
 }
 .home-container{
-    background: url("/src/img/livro.jpg") ;
+    background: url("/src/img/WhatsApp\ Image\ 2025-06-24\ at\ 21.46.56.jpeg") ;
     background-position: center;
    background-size: cover; 
    height: 100vh;
@@ -186,7 +186,7 @@ margin: 30px auto 0 auto;
     cursor: pointer;
 }
 .category .box-container .box:hover{
-    background-color: #fff;
+    background-color: #ffffff;
 }
 .category .box-container .box:hover>*{
 color: var(--black);
@@ -222,6 +222,23 @@ font-weight: lighter;
     color: #fff;
     margin-top: 1rem;
     text-transform: capitalize;
+}
+.footer{
+    text-align: center;
+}
+.footer .share{
+    padding: 1rem 0;
+}
+.footer .share img{
+    margin: 0.3rem;
+    cursor: pointer;
+    border-radius: 50%;
+    padding: 1rem;
+    width: 50px;
+    height: 50px;
+}
+.footer .share img:hover{
+    background-color: var(--icon);
 }
 .menu-toggle.open span:nth-child(1) {
     transform: rotate(45deg) translate(5px, 5px);
